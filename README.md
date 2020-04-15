@@ -21,6 +21,7 @@ did:san:abcdefgh1234
 method-specific-id = 12 characters long and contains the characters a-z and 1–5
 
 Basic DID Document:
+
 ```
 {
   "@context": "https://w3id.org/did/v1",
@@ -39,7 +40,7 @@ Basic DID Document:
   "authentication": ["#key-1"],
   "recovery": ["#key-2"],
   "created":< Created Date of DID Document>,
-  "updated":< Created Date of DID Document>
+  "updated":< Updated Date of DID Document>
 }
 ```
 
@@ -102,7 +103,7 @@ Request:
 curl https://did.baasze.com/v1/did/resolve/did:san:abcdefgh1234
 ```
 
-Result:
+Response:
 
 ```
 {
@@ -191,6 +192,8 @@ Request:
 ### 2.4 Revoke
 A DID document can be revoked by performing an HTTP POST.
 
+Request:
+
 ```
 {
     "did": "did:san:abcdefgh1234",
@@ -208,6 +211,5 @@ A DID document can be revoked by performing an HTTP POST.
 
 ## Privacy considerations
 
-* The SAN DID method is architected to ensure reduced correlation risk.
 * The public key will be used to encrypt data, only those with the private key can decrypt and access the data.
 * The private key only exists on the user's device and will not be known to any third party.
