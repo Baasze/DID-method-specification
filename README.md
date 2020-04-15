@@ -1,9 +1,12 @@
-# DID-method-specification
+# SAN DID Method Specification
 
 Version: 0.1
+
 Note: This specification will be updated and the version number will be bumped.
 
 The system aims to provide secure authentication and various health services based on the SAN blockchain and DID & Verifiable Credential Specifications published by the W3C.
+
+[Decentralized Identifiers (DIDs) v1.0](https://w3c.github.io/did-core/#interoperability-registries)
 
 ## 1. SAN DID
 
@@ -197,14 +200,14 @@ A DID document can be revoked by performing an HTTP POST.
 }
 ```
 
+## Security considerations
+
+* SAN DID method uses the Byzantine Fault Tolerance-DPoS protocol to reach consensus.
+* A DID owner can use recovery key to reset authentication key, but no one can access the verifiable credentials which were issued and encrypted by origin public key.
+* SAN DID Document uses ECDSA secp256k1 to prevent malicious tampering.
+
 ## Privacy considerations
 
 * The SAN DID method is architected to ensure reduced correlation risk.
 * The public key will be used to encrypt data, only those with the private key can decrypt and access the data.
-* The private key that can prove that the DID belongs only exists on the user's device and will not be known to any third party.
-* DID Document uses signature technology to prevent malicious tampering.
-
-## Security considerations
-
-* SAN DID method uses the Byzantine Fault Tolerance-DPoS protocol to reach consensus.
-* An DID owner can use recovery key to reset authentication key, but no one can access the verifiable credentials which were issued and encrypted by origin private key.
+* The private key only exists on the user's device and will not be known to any third party.
