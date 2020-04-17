@@ -207,7 +207,7 @@ Request:
 
 * SAN DID method uses the Byzantine Fault Tolerance-DPoS protocol to reach consensus.
 * A DID owner can use recovery key to reset authentication key, but no one can access the verifiable credentials which were issued and encrypted by origin public key.
-* SAN DID Document uses ECDSA secp256k1 to prevent malicious tampering.
+* SAN DID Document uses ECDSA secp256k1 & SM2 to prevent malicious tampering.
 
 ## Privacy considerations
 
